@@ -1,0 +1,30 @@
+.label {
+  padding: 0 15px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+mat-sidenav-container, mat-sidenav-content{
+  padding:0px;
+}
+
+mat-sidenav{
+  background-color: rgb(177, 151, 211);
+  width: 200px;
+}
+
+.example-card {
+  max-width: 300px;
+  margin: 4px
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

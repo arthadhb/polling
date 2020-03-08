@@ -1,0 +1,49 @@
+<!-- The content below is only a placeholder and can be replaced.
+<div>
+<div style="text-align:center">
+    <h1 class="card-header bg-info">
+      {{ title }}
+    </h1>
+    <div class="row ml-5">
+      <div class="col">
+          <div class="row">
+          </div>
+          <div class="row">
+                <ngx-charts-bar-horizontal
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="single"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+</div> -->
+
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <h1>Polling</h1>
+
+    <span class="menu-spacer"></span>
+<div>
+<a mat-button hidden> </a>
+<a mat-button [routerLink]="'/createpoll'"> Create Poll </a>
+<a mat-button [routerLink]="'/pollevent'"> Poll Events </a>
+<a mat-button [routerLink]="'/polldata'"> Poll Results </a>
+
+</div>
+    <span class="spacer"></span>
+    <mat-icon class="icon" aria-hidden="false">account_circle</mat-icon><label class="label">{{currentUser.fullName}}</label>
+    <button mat-flat-button color="warn" (click)="logOut()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>     
+</main>

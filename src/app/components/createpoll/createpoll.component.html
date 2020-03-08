@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <h1>Polling</h1>
+
+    <span class="menu-spacer"></span>
+<div>
+<a mat-button hidden> </a>
+<a mat-button [routerLink]="'/createpoll'"> Create Poll </a>
+<a mat-button [routerLink]="'/pollevent'"> Poll Events </a>
+<a mat-button [routerLink]="'/polldata'"> Poll Results </a>
+
+</div>
+    <span class="spacer"></span>
+    <mat-icon class="icon" aria-hidden="false">account_circle</mat-icon><label class="label">{{currentUser.fullName}}</label>
+    <button mat-flat-button color="warn" (click)="logOut()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>     
+</main>
+
+<div class="center-container">
+  <h1 class="title">New Poll</h1>
+  <form  (ngSubmit)="createPollDetails()">
+    <mat-form-field class="question">
+    <input matInput placeholder="Poll Id" name="pollId" name="pollId" maxlength="50" pattern=[0-9]{5} [(ngModel)]="createPoll.pollId" required>
+  </mat-form-field>
+  <mat-form-field class="question">
+    <input matInput name="polltitle" id="polltitle" placeholder="Enter Survey Title" maxlength="50" [(ngModel)]="createPoll.pollTitle" required>
+  </mat-form-field>
+  <p>Options</p>
+
+  <mat-form-field class="question">
+    <input matInput name="pollOption1" id="pollOption1" placeholder="Option 1" maxlength="50" [(ngModel)]="createPoll.pollOption1" required>
+  </mat-form-field>
+  <mat-form-field class="question">
+    <input matInput name="pollOption2" id="pollOption2" placeholder="Option 2" maxlength="50" [(ngModel)]="createPoll.pollOption2" required>
+  </mat-form-field>
+  <mat-form-field class="question">
+    <input matInput name="pollOption3" id="pollOption3" placeholder="Option 3" maxlength="50" [(ngModel)]="createPoll.pollOption3">
+  </mat-form-field>
+  <mat-form-field class="question">
+    <input matInput name="pollOption4" id="pollOption4" placeholder="Option 4" maxlength="50" [(ngModel)]="createPoll.pollOption4">
+  </mat-form-field>
+  <!-- <div *ngFor="let options of getPhonesFormControls(); let i = index">
+  <mat-form-field class="added-option">
+    <input matInput placeholder="Option {{i}}" name="polloptions" maxlength="50" ngModel required> 
+    <button mat-button class="remove-btn"><mat-icon class="icon" (click)="removePhone(i)">clear</mat-icon></button>  
+  </mat-form-field>
+  
+  </div> -->
+  <!-- <button mat-button color="warn" class="add-option" (click)="addPhone()">Add options</button> -->
+  <button mat-button color="primary" class="add-option" type="submit">Publish Poll</button>
+  </form>
+</div>  
+
+
